@@ -1,0 +1,396 @@
+%% NYU PhD thesis format. Created by José Koiller 2007--2008.
+
+%% Use the first of the following lines during production to
+%% easily spot "overfull boxes" in the output. Use the second
+%% line for the final version.
+\documentclass[12pt,draft,letterpaper]{report}
+% \documentclass[12pt,letterpaper]{report}
+% \documentclass[12pt]{article}
+
+%% Replace the title, name, advisor name, graduation date and dedication below with
+%% your own. Graduation months must be January, May or September.
+\newcommand{\thesistitle}{TITLE TO JUSTIFY YOUR PHD YEARS}
+\newcommand{\thesisauthor}{Your Name}
+\newcommand{\thesisadvisor}{Your Advisor's Name}
+\newcommand{\graddate}{Month 20XX} % like January XX, May 20XX, September 20XX
+
+%% If you do not want a dedication, scroll down and comment out
+%% the appropriate lines in this file.
+\newcommand{\thesisdedication}{To all the Ph.D. pursuing brave souls}
+
+%% The following makes chapters and sections, but not subsections,
+%% appear in the TOC (table of contents). Increase to 2 or 3 to
+%% make subsections or subsubsections appear, respectively. It seems
+%% to be usual to use the "1" setting, however.
+\setcounter{tocdepth}{1}
+
+%% Sectional units up to subsubsections are numbered. To number
+%% subsections, but not subsubsections, decrease this counter to 2.
+\setcounter{secnumdepth}{3}
+
+% Setting a gap between page number and text block
+
+
+%% Page layout (customized to letter paper and NYU requirements):
+\setlength{\oddsidemargin}{.6in}
+\setlength{\textwidth}{5.8in}
+\setlength{\topmargin}{0.5in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textheight}{8.3in}
+\setlength{\footskip}{.5in}
+
+%% Use the following commands, if desired, during production.
+%% Comment them out for final version.
+%\usepackage{layout} % defines the \layout command, see below
+%\setlength{\hoffset}{-.75in} % creates a large right margin for notes and \showlabels
+
+%% Controls spacing between lines (\doublespacing, \onehalfspacing, etc.):
+\usepackage{setspace}
+
+%
+%% \usepackage{amsmath}
+%% \usepackage{amssymb}
+\usepackage{xspace}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{microtype}
+\usepackage{subfigure}
+\usepackage{color}
+\usepackage{url}
+\usepackage{lipsum}
+\usepackage{fancyhdr}
+% \newfloat{algorithm}{t}{lop}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[LE]{}
+\fancyhead[RO]{}
+\fancyhead[RE]{}
+\fancyhead[LO]{}
+\fancyfoot[C]{}
+\rhead{\thepage}
+
+\fancypagestyle{plain}{%
+\fancyhf{}
+\rhead{\thepage}
+}
+
+\setlength{\headheight}{20pt} 
+
+%% Use the line below for official NYU version, which requires
+%% double line spacing. For all other uses, this is unnecessary,
+%% so the line can be commented out.
+\onehalfspacing % requires package setspace, invoked above
+
+%% Each of the following lines defines the \com command, which produces
+%% a comment (notes for yourself, for instance) in the output file.
+%% Example:    \com{this will appear as a comment in the output}
+%% Choose (uncomment) only one of the three forms:
+%\newcommand{\com}[1]{[/// {#1} ///]}       % between [/// and ///].
+\newcommand{\com}[1]{\marginpar{\tiny #1}} % as (tiny) margin notes
+%\newcommand{\com}[1]{}                     % suppress all comments.
+
+%% This inputs your auxiliary file with \usepackage's and \newcommand's:
+%% It is assumed that that file is called "definitions.tex".
+\input{definitions}
+
+%% Cross-referencing utilities. Use one or the other--whichever you prefer--
+%% but comment out both lines for final version.
+%\usepackage{showlabels}
+%\usepackage{showkeys}
+% \pagestyle{headings}
+
+\begin{document}
+%% Produces a test "layout" page, for "debugging" purposes only.
+%% Comment out for final version.
+%\layout % requires package layout (see above, on this same file)
+%% Sets page numbering to "roman style" i, ii, iii, iv, etc:
+
+%%%%%% Cover page %%%%%%%%%%%
+%% Sets page numbering to "roman style" i, ii, iii, iv, etc:
+\pagenumbering{roman}
+\thispagestyle{empty}
+\begin{center}
+{\bfseries 
+  {\large\thesistitle}
+  \vspace{1in}
+  
+ {\large {\bf DISSERTATION}}\\
+  \vspace{.5in}
+  
+  \begin{doublespace}
+  {\large  
+  Submitted in Partial Fulfillment of\\
+  % \vspace{.1in}
+  the Requirements for\\
+  % \vspace{.1in}
+  the Degree of\\}
+  \end{doublespace}
+  \vspace{.5in}
+  
+  {\large DOCTOR OF PHILOSOPHY (Computer Science)}\\
+  \vspace{.5in}
+  
+  at the \\
+  \vspace{.2in}
+  
+  {\large
+  NEW YORK UNIVERSITY\\
+  \vspace{-0.05in}
+  TANDON SCHOOL OF ENGINEERING\\
+  }
+  \vspace{.2in}
+  
+  by
+  \vspace{.5in}
+
+  {\large\thesisauthor}
+  \vspace{.5in}
+  % \vfill
+
+  {\large\graddate}
+}
+
+\end{center}
+
+\newpage
+
+%%%%%% Title page %%%%%%%%%%%
+%
+\setcounter{page}{1}
+%% No numbering in the title page:
+\thispagestyle{empty}
+%
+\begin{center}
+{\bfseries 
+  {\large\thesistitle}
+  \vspace{.25in}
+  
+  DISSERTATION\\
+  \vspace{.25in}
+  
+  \begin{doublespace}
+  Submitted in Partial Fulfillment of\\
+  % \vspace{.1in}
+  the Requirements for\\
+  % \vspace{.1in}
+  the Degree of\\
+  \end{doublespace}
+  \vspace{.25in}
+  
+  DOCTOR OF PHILOSOPHY (Computer Science)\\
+  \vspace{.25in}
+  
+  at the \\
+  \vspace{.1in}
+  
+  {\large
+  NEW YORK UNIVERSITY\\
+  \vspace{-0.05in}
+  TANDON SCHOOL OF ENGINEERING\\
+  }
+  \vspace{.2in}
+  
+  by
+  \vspace{.3in}
+
+  \thesisauthor
+  \vspace{.3in}
+  % \vfill
+
+  \graddate
+}
+
+\end{center}
+% \vfill
+
+\vspace{0.2in}
+
+\noindent
+\makebox[\textwidth]{\hfill\makebox[2.5in]{Approved: \hfill}}
+\vspace{0.1in}
+
+\noindent
+\makebox[\textwidth]{\hfill\makebox[2.5in]{\hrulefill}}\\
+\makebox[\textwidth]{\hfill\makebox[2.5in]{\hfill Department Head Signature\hfill}}
+\vspace{0.05in}
+
+\noindent
+\makebox[\textwidth]{\hfill\makebox[2.5in]{\hrulefill}}\\
+\makebox[\textwidth]{\hfill\makebox[2.5in]{\hfill Date \hfill}}
+
+\noindent
+Copy No.\hspace{33pt} \noindent\rule[-3pt]{2in}{0.4pt}\\
+University ID\#:      \noindent\rule[-3pt]{2in}{0.4pt}\\
+
+%\newpage
+
+%%%%%%%%%%%%%% Copyright Page %%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%% Guidance Committee Signature Page %%%%%%%%%%%%%%%%%
+Approved by the Guidance Committee:
+\singlespacing
+
+\underline{Major}: Computer Science
+\vspace{0.7in}
+
+\noindent
+\makebox[\textwidth]{\hfill\makebox[3in]{\hrulefill}}\\
+\makebox[\textwidth]{\hfill\makebox[3in]{\hfill \textbf{Advisor's Name}\hfill}}
+\makebox[\textwidth]{\hfill\makebox[3in]{\hfill Professor of \hfill}}
+\makebox[\textwidth]{\hfill\makebox[3in]{\hfill Computer Science and Engineering \hfill}}
+\makebox[\textwidth]{\hfill\makebox[3in]{\rule[-4pt]{2in}{1pt}}}\\
+\makebox[\textwidth]{\hfill\makebox[3in]{\hfill Date \hfill}}\\
+\vspace{0.5in}
+
+\noindent
+\makebox[\textwidth]{\hfill\makebox[3in]{\hrulefill}}\\
+\makebox[\textwidth]{\hfill\makebox[3in]{\hfill \textbf{Advisor's Name}\hfill}}
+\makebox[\textwidth]{\hfill\makebox[3in]{\hfill Professor of \hfill}}
+\makebox[\textwidth]{\hfill\makebox[3in]{\hfill Computer Science and Engineering \hfill}}
+\makebox[\textwidth]{\hfill\makebox[3in]{\rule[-4pt]{2in}{1pt}}}\\
+\makebox[\textwidth]{\hfill\makebox[3in]{\hfill Date \hfill}}\\
+\vspace{0.5in}
+
+
+\noindent
+\makebox[\textwidth]{\hfill\makebox[3in]{\hrulefill}}\\
+\makebox[\textwidth]{\hfill\makebox[3in]{\hfill \textbf{Advisor's Name}\hfill}}
+\makebox[\textwidth]{\hfill\makebox[3in]{\hfill Assistant Professor of \hfill}}
+\makebox[\textwidth]{\hfill\makebox[3in]{\hfill Computer Science and Engineering \hfill}}
+\makebox[\textwidth]{\hfill\makebox[3in]{\rule[-4pt]{2in}{1pt}}}\\
+\makebox[\textwidth]{\hfill\makebox[3in]{\hfill Date \hfill}}\\
+\vspace{0.5in}
+
+\noindent
+\makebox[\textwidth]{\hfill\makebox[3in]{\hrulefill}}\\
+\makebox[\textwidth]{\hfill\makebox[3in]{\hfill \textbf{Advisor's Name}\hfill}}
+\makebox[\textwidth]{\hfill\makebox[3in]{\hfill Assistant Professor of XXX\hfill}}
+\makebox[\textwidth]{\hfill\makebox[3in]{\hfill Computer Science and Engineering \hfill}}
+\makebox[\textwidth]{\hfill\makebox[3in]{\rule[-4pt]{2in}{1pt}}}\\
+\makebox[\textwidth]{\hfill\makebox[3in]{\hfill Date \hfill}}\\
+
+\doublespacing
+
+%%%%%%%%%%%%%% Microfilm / Publishing Page %%%%%%%%%%%%%%%%%
+\begin{center}
+Microfilm or other copies of this dissertation are obtainable from
+\vspace{4in}
+
+UMI Dissertation Publishing\\
+ProQuest CSA\\
+789 E. Eisenhower Parkway\\
+P.O. Box 1346\\
+Ann Arbor, MI 48106-1346
+
+\end{center}
+\newpage
+
+%%%%%%%%%%%%%% Vita %%%%%%%%%%%%%%%%%
+\section*{Vita}
+\addcontentsline{toc}{section}{Vita}
+\input{vita}
+\newpage
+
+
+
+%%%%%%%%%%%%%% Ackknowlegment %%%%%%%%%%%%%%%%%
+%% Comment out the following lines if you do not want to acknowledge
+%% anyone's help...
+\section*{Acknowledgements}
+\addcontentsline{toc}{section}{Acknowledgements}
+\input{acknowledge}
+\newpage
+
+%%%%%%%%%%%%%% Dedication Page %%%%%%%%%%%%%%%%%
+%% Comment out the following lines if you do not want to dedicate
+%% this to anyone...
+\vspace*{\fill}
+\begin{center}
+  \thesisdedication%\addcontentsline{toc}{section}{Dedication}
+\end{center}
+\vfill
+\newpage
+
+
+%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%
+\section*{}
+\begin{center}
+{\bfseries 
+  %{\large\thesistitle}
+  \vspace{.25in}  
+  {\bf ABSTRACT}\\
+  \vspace{.25in}
+  {\bf TITLE TO JUSTIFY YOUR PHD YEARS}\\  
+  \vspace{.25in}
+  {\bf by}\\  
+  \vspace{.5in}
+  {\bf \thesisauthor}\\
+  \vspace{.5in}
+  {\bf Advisor: Prof. XXXX}\\
+  \vspace{.25in}
+  {\bf Submitted in Partial Fulfillment of the Requirements for}\\
+  {\bf the Degree of Doctor of Philosophy (Computer Science)}\\
+  \vspace{.25in}
+  {\bf \graddate}  
+  \vspace{.25in}
+}
+\end{center}
+\addcontentsline{toc}{section}{Abstract}
+\input{abstract}
+\newpage
+
+%%%% Table of Contents %%%%%%%%%%%%
+\tableofcontents
+% \clearpage
+% \pagestyle{headings}
+
+%%%%% List of Figures %%%%%%%%%%%%%
+%% Comment out the following two lines if your thesis does not
+%% contain any figures. The list of figures contains only
+%% those figures included withing the "figure" environment.
+\listoffigures\addcontentsline{toc}{section}{\listfigurename}
+\newpage
+
+%%%%% List of Tables %%%%%%%%%%%%%
+%% Comment out the following two lines if your thesis does not
+%% contain any tables. The list of tables contains only
+%% those tables included withing the "table" environment.
+\listoftables\addcontentsline{toc}{section}{\listtablename}
+\newpage
+
+%%%%% Body of thesis starts %%%%%%%%%%%%
+\pagenumbering{arabic} % switches page numbering to arabic: 1, 2, 3, etc.
+
+%% Introduction. If your thesis has no introduction, or chapter 1 is
+%% meant to be the introduction, then comment out the lines below.
+%% \section*{Introduction}\addcontentsline{toc}{section}{Introduction}
+%\input{intro}
+
+%%If your thesis has different "Parts", use commands such as the following:
+\input{introduction/introduction}
+
+%
+\input{background/background}
+
+%
+\input{conclusions/conclusions}
+
+%%%%% Appendices start %%%%%%%%%%%%%%%%
+%% Comment out the following line if your thesis has no appendix
+\appendix
+\input{appendix/app1}
+
+%% Note: If your thesis has more than one appendix, NYU requires a "list of
+%% appendices" page before the body of the thesis. I don't provide the tools
+%% to create that here, so you're on your own for that one... Sorry.
+%\input{app2}
+
+%%%% Input bibliography file %%%%%%%%%%%%%%%
+% \input{thesis}
+\bibliographystyle{abbrv}
+\bibliography{biblio,introduction/introduction,background/background,conclusions/conclusions} % add intelligently
+
+\end{document}

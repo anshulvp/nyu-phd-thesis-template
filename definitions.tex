@@ -1,0 +1,107 @@
+%%
+%% Place here your \usepackage's. Some recommended packages are already included.
+%%
+
+% Graphics:
+\usepackage[final]{graphicx}
+%\usepackage{graphicx} % use this line instead of the above to suppress graphics in draft copies
+%\usepackage{graphpap} % \defines the \graphpaper command
+
+% Indent first line of each section:
+\usepackage{indentfirst}
+
+% Good AMS stuff:
+\usepackage{amsthm} % facilities for theorem-like environments
+\usepackage[tbtags]{amsmath} % a lot of good stuff!
+
+% Fonts and symbols:
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{xspace}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{microtype}
+\usepackage{subfigure}
+\usepackage{color}
+\usepackage{todonotes}
+\usepackage{url}
+\newfloat{algorithm}{t}{lop}
+
+% Formatting tools:
+%\usepackage{relsize} % relative font size selection, provides commands \textsmalle, \textlarger
+%\usepackage{xspace} % gentle spacing in macros, such as \newcommand{\acims}{\textsc{acim}s\xspace}
+
+% Page formatting utility:
+%\usepackage{geometry}
+\usepackage{multirow}
+
+%
+\usepackage{listings}
+
+
+%
+\usepackage[numbers,sort]{natbib}
+
+\usepackage[all,cmtip]{xy}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+%%
+%% Place here your \newcommand's and \renewcommand's. Some examples already included.
+%%
+%\newcommand{\acims}{\textsc{acim}s\xspace}
+\newcommand{\Mspace}        {{\mathbb M}}
+\newcommand{\Rspace}        {{\mathbb R}}
+\newcommand{\Cspace}        {{\mathbb C}}
+
+\newcommand{\Mo}        {{\hat M}}
+\newcommand{\Ms}        {{\tilde M}}
+\newcommand{\Do}          {{\hat D}}
+\newcommand{\Ds}        {{\tilde D}}
+\newcommand{\doo}          {{\hat d}}
+\newcommand{\dss}        {{\tilde d}}
+\newcommand{\w}        {{\mathbf w}}
+
+% general
+\newcommand{\ie}{i.e.}
+\newcommand{\eg}{e.g.}
+\newcommand{\reffig}[1]{{Figure~\ref{#1}}}
+\newcommand{\refchap}[1]{{Chapter~\ref{#1}}}
+\newcommand{\refsec}[1]{{Section~\ref{#1}}}
+\newcommand{\reftab}[1]{{Table~\ref{#1}}}
+\newcommand{\refapp}[1]{{Appendix~\ref{#1}}}
+\newcommand{\refeq}[1]{{Equation~\ref{#1}}}
+\newcommand{\refalg}[1]{{Algorithm~\ref{#1}}}
+\newcommand{\myparagraph}[1]{\noindent \textbf{#1}}
+\newcommand{\highlight}[1]{{\color{black}#1}}
+
+%%
+%% Place here your \newtheorem's:
+%%
+
+%% Some examples commented out below. Create your own or use these...
+%%%%%%%%%\swapnumbers % this makes the numbers appear before the statement name.
+%\theoremstyle{plain}
+%\newtheorem{thm}{Theorem}[chapter]
+%\newtheorem{prop}[thm]{Proposition}
+%\newtheorem{lemma}[thm]{Lemma}
+%\newtheorem{cor}[thm]{Corollary}
+
+%\theoremstyle{definition}
+%\newtheorem{define}{Definition}[chapter]
+
+%\theoremstyle{remark}
+%\newtheorem*{rmk*}{Remark}
+%\newtheorem*{rmks*}{Remarks}
+
+%% This defines the "proo" environment, which is the same as proof, but
+%% with "Proof:" instead of "Proof.". I prefer the former.
+%\newenvironment{proo}{\begin{proof}[Proof:]}{\end{proof}}
