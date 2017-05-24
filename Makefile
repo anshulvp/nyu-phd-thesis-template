@@ -65,3 +65,5 @@ clean:
 
 clobber: clean
 	$(RM) *~ \#* core
+
+.PHONY: all pdf clean
