@@ -66,4 +66,4 @@ clean:
 clobber: clean
 	$(RM) *~ \#* core
 
-.PHONY: all pdf clean
+.PHONY: all pdf clean $(NAME).pdf
